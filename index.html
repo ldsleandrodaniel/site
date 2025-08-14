@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeaderSoft - Soluções em Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-            --gray-bg: #f5f5f5;
+            --primary: #6C8EBF; /* Azul pastel suave */
+            --secondary: #82B3C9; /* Azul claro */
+            --accent: #D4B483; /* Dourado suave */
+            --light: #F8F5F2; /* Bege muito claro */
+            --dark: #4A5C6B; /* Azul escuro suave */
+            --text: #5A5A5A; /* Cinza escuro para texto */
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         * {
@@ -21,84 +27,123 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--gray-bg);
-            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         /* Header Styles */
         header {
-            background: var(--gray-bg);
-            padding: 3rem 0;
+            background: var(--white);
+            padding: 4rem 0 3rem;
             text-align: center;
-            border-bottom: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
         .logo-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
         
         h1 {
-            color: black;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            color: var(--dark);
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
         
         .logo {
-            width: 300px;
+            width: 180px;
             height: auto;
-            margin: 1rem 0;
-            border: 3px solid var(--dark);
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
+            margin: 1.5rem 0;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 3px solid var(--white);
+            outline: 2px solid var(--accent);
         }
         
         .logo:hover {
-            transform: scale(1.03);
+            transform: scale(1.05) rotate(5deg);
         }
         
         /* Main Content */
         main {
-            padding: 3rem 0;
+            padding: 4rem 0;
         }
         
         section {
             margin-bottom: 3rem;
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            border: 1px solid #ddd;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
         
         section:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
         }
         
         h2 {
-            color: var(--primary);
-            margin-bottom: 1.8rem;
-            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
             position: relative;
-            padding-bottom: 0.8rem;
+            padding-bottom: 1rem;
         }
         
         h2::after {
@@ -106,154 +151,318 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--accent);
-            border-radius: 2px;
+            border-radius: 3px;
         }
         
         p {
             margin-bottom: 1.5rem;
-            color: #555;
+            color: var(--text);
             line-height: 1.8;
             font-size: 1.1rem;
+            font-weight: 300;
         }
         
         /* Product Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
         .product-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--white);
+            border-radius: 16px;
             overflow: hidden;
-            border: 2px solid #ddd;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            max-width: 500px;
-            margin: 2rem auto;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .product-img {
-            height: 250px;
-            background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+            height: 220px;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 4rem;
-            border-bottom: 2px solid #ddd;
+            font-size: 4.5rem;
+            position: relative;
+        }
+        
+        .product-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
         }
         
         .product-info {
             padding: 2rem;
             text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-info h3 {
             color: var(--dark);
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+        }
+        
+        .product-info p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
         
         .btn {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: auto;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(108, 142, 191, 0.3);
+            align-self: center;
         }
         
         .btn:hover {
-            background: var(--accent);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
-            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(108, 142, 191, 0.4);
+        }
+        
+        .btn-portfolio {
+            background: linear-gradient(to right, var(--accent), #E8C97D);
+            box-shadow: 0 4px 15px rgba(212, 180, 131, 0.3);
+        }
+        
+        .btn-portfolio:hover {
+            background: linear-gradient(to right, #E8C97D, var(--accent));
+            box-shadow: 0 8px 25px rgba(212, 180, 131, 0.4);
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .feature-item h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .portfolio-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
         
         /* Footer */
         footer {
             background: var(--dark);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid #444;
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
         }
         
         .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
-        .contact-info {
-            margin: 1.5rem 0;
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-column p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+            font-weight: 300;
         }
         
         .contact-info p {
-            margin: 1rem 0;
-            color: #ccc;
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
         }
         
         .contact-info a {
             color: var(--accent);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 500;
+            font-weight: 400;
         }
         
         .contact-info a:hover {
-            color: white;
+            color: var(--white);
             text-decoration: underline;
         }
         
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             margin-top: 1.5rem;
         }
         
         .social-links a {
-            color: white;
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
         }
         
         .social-links a:hover {
-            color: var(--accent);
+            background: var(--accent);
+            transform: translateY(-3px);
         }
         
         .copyright {
-            margin-top: 2rem;
-            color: #999;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
             font-size: 0.9rem;
-            border-top: 1px solid #444;
-            padding-top: 1.5rem;
-            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
         /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0 20px;
             }
             
             .logo {
-                width: 250px;
+                width: 150px;
             }
             
             section {
                 padding: 1.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -261,30 +470,73 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo-container">
+            <div class="logo-container fade-in">
                 <h1>LeaderSoft</h1>
-                <img src="leaDerSoft.jpg" alt="LeaderSoft Logo" class="logo">
+                <img src="leaDerSoft.jpg" alt="LeaderSoft Logo" class="logo fade-in delay-1">
             </div>
         </div>
     </header>
     
     <main class="container">
-        <section id="about">
+        <section id="about" class="fade-in delay-1">
             <h2>Quem Somos</h2>
-            <p>Somos uma empresa especializada em desenvolvimento de software sob medida, comprometida em entregar soluções tecnológicas que impulsionam o crescimento do seu negócio. Nossa equipe de especialistas combina criatividade e expertise técnica para criar produtos que realmente fazem a diferença.</p>
+            <p>Na LeaderSoft, combinamos expertise técnica com criatividade para desenvolver soluções de software sob medida que impulsionam o crescimento do seu negócio. somos comprometidos em entregar produtos que não apenas atendam, mas superem suas expectativas.</p>
+            
+            <div class="features">
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon">💡</div>
+                    <h3>Inovação</h3>
+                    <p>Soluções criativas que antecipam as necessidades do mercado e dos usuários.</p>
+                </div>
+                
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Segurança</h3>
+                    <p>Desenvolvimento com os mais altos padrões de segurança e proteção de dados.</p>
+                </div>
+                
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Software otimizado para oferecer a melhor experiência e desempenho.</p>
+                </div>
+            </div>
         </section>
         
-        <section id="products">
-            <h2>Nossos Produtos</h2>
-            <div class="product-card">
-                <div class="product-img">
-                    🗓️
+        <section id="products" class="fade-in delay-2">
+            <h2>Nossas Soluções</h2>
+            <p>Conheça nossos produtos desenvolvidos com tecnologia de ponta e design intuitivo para simplificar seu dia a dia.</p>
+            
+            <div class="products-grid">
+                <div class="product-card fade-in delay-3">
+                    <div class="product-img">
+                        🗓️
+                    </div>
+                    <div class="product-info">
+                        <h3>Agenda Digital</h3>
+                        <p>Solução completa para gestão de compromissos e tarefas.</p>
+                        <a href="https://ldsagenda.up.railway.app/" class="btn">Experimente Agora</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3>Agenda Digital</h3>
-                    <p>Solução completa para gestão de compromissos e organização pessoal e profissional.</p>
-                    <a href="https://ldsagenda.up.railway.app/" class="btn">Acessar Agenda</a>
+                
+                <div class="product-card fade-in delay-3">
+                    <div class="product-img">
+                        🛠️
+                    </div>
+                    <div class="product-info">
+                        <h3>Gestor de Borracharia</h3>
+                        <p>Sistema completo para gestão de borracharias,  em uma plataforma intuitiva.</p>
+                        <a href="https://pablohd.up.railway.app/" class="btn">Acessar Sistema</a>
+                    </div>
                 </div>
+            </div>
+        </section>
+        
+        <section id="portfolio" class="fade-in delay-3">
+            <div class="portfolio-section">
+                <h2>Nosso Portfólio Completo</h2>
+                <p>Deseja conhecer todos os nossos projetos e soluções personalizadas? Receba nosso portfólio completo.</p>
+                <a href="mailto:contato@leadersoft.site?subject=Envie-me o portfólio completo" class="btn btn-portfolio">Receber Portfólio</a>
             </div>
         </section>
     </main>
@@ -292,19 +544,36 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h2>Entre em Contato</h2>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:contato@leadersoft.site">contato@leadersoft.site</a></p>
-                    <p><strong>Telefone:</strong> (55) 53 99761-512</p>
+                <div class="footer-column">
+                    <h3>Sobre Nós</h3>
+                    <p>Transformando ideias em soluções digitais desde 2023. A LeaderSoft está comprometida com a excelência em desenvolvimento de software.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
                 </div>
                 
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <div class="contact-info">
+                        <p><i>✉️</i> <a href="mailto:contato@leadersoft.site">contato@leadersoft.site</a></p>
+                        <p><i>📞</i> (55) 53 99761-512</p>
+                        <p><i>🏢</i> Campo Bom, RS - Brasil</p>
+                    </div>
                 </div>
                 
-                <p class="copyright">© 2023 LeaderSoft. Todos os direitos reservados.</p>
+                <div class="footer-column">
+                    <h3>Horário</h3>
+                    <p><i>🕘</i> Segunda a Sexta</p>
+                    <p>9:00 - 18:00</p>
+                    <p><i>🕚</i> Sábado</p>
+                    <p>9:00 - 12:00</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 LeaderSoft. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
