@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeaderSoft - Soluções em Software</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gray-bg: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--gray-bg);
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gray-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            color: black;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            width: 300px;
+            height: auto;
+            margin: 1rem 0;
+            border: 3px solid var(--dark);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.8rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        /* Product Section */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-color: var(--accent);
+        }
+        
+        .product-img {
+            height: 250px;
+            background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 4rem;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .product-info {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            border-color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #444;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-info {
+            margin: 1.5rem 0;
+        }
+        
+        .contact-info p {
+            margin: 1rem 0;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #444;
+            padding-top: 1.5rem;
+            width: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .logo {
+                width: 250px;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <h1>LeaderSoft</h1>
+                <img src="leaDerSoft.jpg" alt="LeaderSoft Logo" class="logo">
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h2>Quem Somos</h2>
+            <p>Somos uma empresa especializada em desenvolvimento de software sob medida, comprometida em entregar soluções tecnológicas que impulsionam o crescimento do seu negócio. Nossa equipe de especialistas combina criatividade e expertise técnica para criar produtos que realmente fazem a diferença.</p>
+        </section>
+        
+        <section id="products">
+            <h2>Nossos Produtos</h2>
+            <div class="product-card">
+                <div class="product-img">
+                    🗓️
+                </div>
+                <div class="product-info">
+                    <h3>Agenda Digital</h3>
+                    <p>Solução completa para gestão de compromissos e organização pessoal e profissional.</p>
+                    <a href="https://ldsagenda.up.railway.app/" class="btn">Acessar Agenda</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Entre em Contato</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:contato@leadersoft.site">contato@leadersoft.site</a></p>
+                    <p><strong>Telefone:</strong> (55) 53 99761-512</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+                
+                <p class="copyright">© 2023 LeaderSoft. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
