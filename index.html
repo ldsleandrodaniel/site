@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6C8EBF; /* Azul pastel suave */
-            --secondary: #82B3C9; /* Azul claro */
-            --accent: #D4B483; /* Dourado suave */
-            --light: #F8F5F2; /* Bege muito claro */
-            --dark: #4A5C6B; /* Azul escuro suave */
-            --text: #5A5A5A; /* Cinza escuro para texto */
-            --white: #FFFFFF;
+            --primary: #FFD166;
+            --secondary: #EF976B;
+            --accent: #E07A5F;
+            --light: #F7EDE2;
+            --medium: #EAD8C0;
+            --dark: #6D4C41;
+            --text: #5A5A5A;
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -29,7 +29,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.7;
-            background-color: var(--light);
+              background-color: #EAD8C0; /* Cinza alaranjado pastel */
             color: var(--text);
             overflow-x: hidden;
         }
@@ -40,9 +40,8 @@
             padding: 0 30px;
         }
         
-        /* Header Styles */
         header {
-            background: var(--white);
+            background: var(--medium);
             padding: 4rem 0 3rem;
             text-align: center;
             position: relative;
@@ -99,22 +98,24 @@
             border-radius: 50%;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 3px solid var(--white);
+            border: 3px solid var(--medium);
             outline: 2px solid var(--accent);
+            background-color: var(--light);
         }
         
         .logo:hover {
             transform: scale(1.05) rotate(5deg);
         }
         
-        /* Main Content */
         main {
             padding: 4rem 0;
+            background-color: var(--light);
         }
         
         section {
+	
             margin-bottom: 3rem;
-            background: var(--white);
+            background: var(--medium);
             border-radius: 16px;
             padding: 3rem;
             box-shadow: var(--shadow);
@@ -122,6 +123,7 @@
             position: relative;
             overflow: hidden;
         }
+
         
         section::before {
             content: '';
@@ -165,7 +167,6 @@
             font-weight: 300;
         }
         
-        /* Product Section */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -174,7 +175,7 @@
         }
         
         .product-card {
-            background: var(--white);
+            background: var(--medium);
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.05);
@@ -192,11 +193,11 @@
         
         .product-img {
             height: 220px;
-            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            background: linear-gradient(135deg, var(--light), var(--primary));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
+            color: var(--dark);
             font-size: 4.5rem;
             position: relative;
         }
@@ -208,7 +209,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+            background: linear-gradient(to top, rgba(247,237,226,0.9), transparent);
         }
         
         .product-info {
@@ -233,7 +234,7 @@
         .btn {
             display: inline-block;
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
+            color: var(--dark);
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
@@ -243,27 +244,29 @@
             border: none;
             font-size: 1rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(108, 142, 191, 0.3);
+            box-shadow: 0 4px 15px rgba(239, 151, 107, 0.3);
             align-self: center;
         }
         
         .btn:hover {
             background: linear-gradient(to right, var(--secondary), var(--primary));
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(108, 142, 191, 0.4);
+            box-shadow: 0 8px 25px rgba(239, 151, 107, 0.4);
+            color: var(--dark);
         }
         
         .btn-portfolio {
-            background: linear-gradient(to right, var(--accent), #E8C97D);
-            box-shadow: 0 4px 15px rgba(212, 180, 131, 0.3);
+            background: linear-gradient(to right, var(--accent), #D96C52);
+            box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+            color: var(--light);
         }
         
         .btn-portfolio:hover {
-            background: linear-gradient(to right, #E8C97D, var(--accent));
-            box-shadow: 0 8px 25px rgba(212, 180, 131, 0.4);
+            background: linear-gradient(to right, #D96C52, var(--accent));
+            box-shadow: 0 8px 25px rgba(224, 122, 95, 0.4);
+            color: var(--light);
         }
         
-        /* Features Section */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -272,7 +275,7 @@
         }
         
         .feature-item {
-            background: var(--white);
+            background: var(--medium);
             padding: 2rem;
             border-radius: 12px;
             text-align: center;
@@ -288,7 +291,7 @@
         
         .feature-icon {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 1.5rem;
             display: inline-block;
         }
@@ -299,10 +302,11 @@
             font-size: 1.3rem;
         }
         
-        /* Portfolio Section */
         .portfolio-section {
             text-align: center;
             padding: 3rem 2rem;
+            background: var(--medium);
+            border-radius: 16px;
         }
         
         .portfolio-section p {
@@ -310,10 +314,9 @@
             margin: 0 auto 2rem;
         }
         
-        /* Footer */
         footer {
             background: var(--dark);
-            color: var(--white);
+            color: var(--light);
             padding: 4rem 0 2rem;
             position: relative;
         }
@@ -336,7 +339,7 @@
         }
         
         .footer-column h3 {
-            color: var(--white);
+            color: var(--light);
             margin-bottom: 1.5rem;
             font-size: 1.4rem;
             position: relative;
@@ -354,7 +357,7 @@
         }
         
         .footer-column p {
-            color: rgba(255,255,255,0.7);
+            color: rgba(247,237,226,0.8);
             margin-bottom: 1rem;
             font-weight: 300;
         }
@@ -371,14 +374,14 @@
         }
         
         .contact-info a {
-            color: var(--accent);
+            color: var(--primary);
             text-decoration: none;
             transition: color 0.3s ease;
             font-weight: 400;
         }
         
         .contact-info a:hover {
-            color: var(--white);
+            color: var(--light);
             text-decoration: underline;
         }
         
@@ -394,9 +397,9 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(247,237,226,0.1);
             border-radius: 50%;
-            color: var(--white);
+            color: var(--light);
             font-size: 1.2rem;
             transition: var(--transition);
         }
@@ -410,12 +413,11 @@
             margin-top: 3rem;
             padding-top: 2rem;
             text-align: center;
-            color: rgba(255,255,255,0.5);
+            color: rgba(247,237,226,0.6);
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(247,237,226,0.2);
         }
         
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -429,7 +431,6 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
         
-        /* Responsive */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.8rem;
